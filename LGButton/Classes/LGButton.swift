@@ -371,6 +371,10 @@ open class LGButton: UIControl {
     // MARK:
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupUI()
+    }
+    
+    func setupUI() {
         registIconFont()
         xibSetup()
         setupView()
