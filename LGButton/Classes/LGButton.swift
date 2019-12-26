@@ -721,4 +721,24 @@ open class LGButton: UIControl {
             }
         }
     }
+  // --------------------------------------------> My Custom <--------------------------------------------
+  var rootColor: UIColor!
+  var disableColor: UIColor! = .lightGrey
+    
+  func disable() {
+    guard isEnabled == true else {
+      return
+    }
+    isEnabled = false
+    rootColor = bgColor
+    bgColor = disableColor
+  }
+  
+  func enable() {
+    guard isEnabled == false else {
+      return
+    }
+    isEnabled = true
+    bgColor = rootColor
+  }
 }
