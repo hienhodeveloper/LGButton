@@ -452,6 +452,7 @@ open class LGButton: UIControl {
     fileprivate func setupBackgroundColor() {
         bgContentWidthConstraint.constant = min(0, -borderWidth)
         bgContentHeightConstraint.constant = min(0, -borderWidth)
+        rootColor = bgColor
         bgContentView.backgroundColor = bgColor
     }
     
