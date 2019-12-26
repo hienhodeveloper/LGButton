@@ -69,6 +69,7 @@ open class LGButton: UIControl {
     
     @IBInspectable public var bgColor: UIColor = UIColor.gray {
         didSet{
+            rootColor = bgColor
             setupView()
         }
     }
@@ -723,9 +724,9 @@ open class LGButton: UIControl {
     }
   // --------------------------------------------> My Custom <--------------------------------------------
   var rootColor: UIColor!
-  var disableColor: UIColor! = .lightGrey
+  @IBInspectable public var disableColor: UIColor = .lightGray
     
-  func disable() {
+  public func disable() {
     guard isEnabled == true else {
       return
     }
@@ -734,7 +735,7 @@ open class LGButton: UIControl {
     bgColor = disableColor
   }
   
-  func enable() {
+  public func enable() {
     guard isEnabled == false else {
       return
     }
